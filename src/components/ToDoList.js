@@ -6,18 +6,20 @@ class ToDoList extends Component {
   render() {
     console.log(this.props.toDos);
     return (
-      this.props.toDos.map((todo) => (
         <div>
+          {/* Add map method in div, otherwise 'key' error will display */}
+          {this.props.toDos.map((todo) => (
             <ToDoItems 
               key = {todo.id}
               todo = {todo}
             />
+          ))}
         </div>
-      ))
     );
   }
 }
 
+// PropTypes
 ToDoList.propTypes = {
   toDos: PropTypes.array.isRequired,
 }
