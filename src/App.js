@@ -8,24 +8,40 @@ class App extends Component {
       {
         id: 1,
         title: 'Take out trash',
-        comleted: false,
+        completed: false,
       },
       {
         id: 2,
         title: 'Hello World',
-        comleted: false,
+        completed: false,
       },
       {
         id: 3,
         title: 'Practice with React',
-        comleted: false,
+        completed: false,
       },
     ]
   }
+
+  // Toggle Complete checkbox
+  markCompleted = (id) => {
+    console.log(id)
+    this.setState({
+      toDos: this.state.toDos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo;
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <ToDoList 
+          //这个markcomplete下两层props
+          markCompleted = {this.markCompleted}
           toDos={this.state.toDos}/>
       </div>
     );
