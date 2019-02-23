@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 import ToDoList from './components/ToDoList';
+import uuid from 'uuid'
+
+// Add To Do Item
+import AddTodoItem from './components/AddTodoItem';
 
 class App extends Component {
   state = {
     toDos: [
       {
-        id: 1,
+        id: uuid.v4(),
         title: 'Take out trash',
         completed: false,
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: 'Hello World',
         completed: false,
       },
       {
-        id: 3,
+        id: uuid.v4(),
         title: 'Practice with React',
         completed: false,
       },
@@ -36,6 +40,7 @@ class App extends Component {
     })
   }
 
+  // Delete Todo Item
   onItemDeleteClick = (id) => {
     console.log(id)
     this.setState({
@@ -45,9 +50,27 @@ class App extends Component {
     })
   }
 
+  // Add Todo Item
+  addToDo = (title) => {
+    const newToDo = {
+      // Generate ID automaticly
+      id: uuid.v4(),
+      title: title,
+      completed: false,
+    }
+    this.setState({
+      toDos: [...this.state.toDos, newToDo]
+    })
+  }
+
   render() {
+    console.log(this.props.title)
     return (
       <div className="App">
+        <AddTodoItem
+          addToDo = {this.addToDo}
+        />
+
         <ToDoList 
           //这个markcomplete下两层props
           markCompleted = {this.markCompleted}
