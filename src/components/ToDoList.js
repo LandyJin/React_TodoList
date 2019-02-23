@@ -14,7 +14,8 @@ class ToDoList extends Component {
           {this.props.toDos.map((todo) => (
             <ToDoItems 
               className = "toDoItem"
-              markCompleted = {this.props.markCompleted}
+              markComplete = {this.props.markCompleted}
+              onItemDeleteClick = {this.props.onItemDeleteClick}
               key = {todo.id}
               todo = {todo}
             />

@@ -13,3 +13,13 @@
 .toDoItems input {
     margin: 0 10px;
 }
+
+.toDoItems button {
+    float: right;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff7b7b;
+    color: #ffff;
+    font-weight: bold;
+}

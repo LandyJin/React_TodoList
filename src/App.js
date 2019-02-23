@@ -36,12 +36,22 @@ class App extends Component {
     })
   }
 
+  onItemDeleteClick = (id) => {
+    console.log(id)
+    this.setState({
+      toDos: this.state.toDos.filter(todo => {
+         return todo.id !== id;
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <ToDoList 
           //这个markcomplete下两层props
           markCompleted = {this.markCompleted}
+          onItemDeleteClick = {this.onItemDeleteClick}
           toDos={this.state.toDos}/>
       </div>
     );
