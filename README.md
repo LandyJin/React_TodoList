@@ -1,13 +1,30 @@
-Create React App: 
-https://github.com/LandyJin/ReactJS-REST_API/blob/master/src/App.js
+# To Do List
+
+## Create React App: 
+
+[React App] (https://github.com/LandyJin/ReactJS-REST_API/blob/master/src/App.js)
 
 
-Install Extension in Visual Code 'ES7 React/Redux/React-Native/JS snippets'
+## Enable Extension in Visual Studio Code 
 
-@ES7 React/Redux/React-Native/JS snippets
+In Extension search:
 
-Feature: Quicker to Create React Components
+'@ES7 React/Redux/React-Native/JS snippets'
 
+Feature: Easier to Create React Components
 
-* uuid * 
-Generate Id it self
+## uuid 
+
+Feature: Generate Id it self
+
+```bash
+yarn add uuid 
+```
+
+Example: 
+```javascript
+import uuid from 'uuid'
+...
+
+id: uuid.v4(),
+```
