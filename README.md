@@ -2,7 +2,7 @@
 
 ## Create React App: 
 
-[React App] (https://github.com/LandyJin/ReactJS-REST_API/blob/master/src/App.js)
+[React App](https://github.com/LandyJin/ReactJS-REST_API/blob/master/src/App.js)
 
 
 ## Enable Extension in Visual Studio Code 
