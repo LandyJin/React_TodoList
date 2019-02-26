@@ -28,3 +28,11 @@ import uuid from 'uuid'
 
 id: uuid.v4(),
 ```
+
+## Json Placeholder 
+
+Feature: Generate a fake API
+
+[Json Placeholder](https://my-json-server.typicode.com/)
+
+[My App API](https://my-json-server.typicode.com/LandyJin/React_TodoList/toDos)
