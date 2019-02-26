@@ -26,14 +26,12 @@ export class ToDoItems extends Component {
         isEdited : false,
         onSubmit: true
     })
-    document.querySelector('input[type=checkbox]').style.visibility = "visible";
   }
 
   onItemEditClick = () => {
     this.setState ({
       isEdited : true,
     })
-    document.querySelector('input[type=checkbox]').style.visibility = "hidden";
   }
 
   getStyle = () => {
@@ -68,7 +66,6 @@ export class ToDoItems extends Component {
       //style attribute 可以加变量或者function
       <div style={this.getStyle()} className="toDoItems">
           <div>
-            <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
             {this.state.isEdited ? 
               <form 
                 className ="editItem"
@@ -83,15 +80,21 @@ export class ToDoItems extends Component {
                     type="submit" 
                     value="Submit"
                 />
+
+                <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
               </form>
               : 
               <span>
-                {this.state.onSubmit ? <span>{ this.state.title }</span> : <span>{ title }</span>}
+
+                <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
+                {this.state.onSubmit ? 
+                <span>{ this.state.title }</span> : 
+                <span>{ title }</span>}
                 <button onClick={this.onItemEditClick}>Edit</button>
+                <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
               </span>
               }
             
-            <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
           </div>
       </div>
     )
