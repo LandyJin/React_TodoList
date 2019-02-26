@@ -88,8 +88,8 @@ export class ToDoItems extends Component {
 
                 <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
                 {this.state.onSubmit ? 
-                <span>{ this.state.title }</span> : 
-                <span>{ title }</span>}
+                  <span>{ this.state.title }</span> : 
+                  <span>{ title }</span>}
                 <button onClick={this.onItemEditClick}>Edit</button>
                 <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
               </span>
