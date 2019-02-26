@@ -75,6 +75,7 @@ class App extends Component {
           //这个markcomplete下两层props
           markCompleted = {this.markCompleted}
           onItemDeleteClick = {this.onItemDeleteClick}
+          onItemEditClick = {this.onItemEditClick}
           toDos={this.state.toDos}/>
       </div>
     );

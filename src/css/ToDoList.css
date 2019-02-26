@@ -23,3 +23,9 @@
     color: #ffff;
     font-weight: bold;
 }
+
+
+/* Edit Item */
+.editItem {
+    float: left;
+}
