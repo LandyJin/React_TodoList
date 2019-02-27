@@ -12,14 +12,16 @@ class ToDoList extends Component {
     return (
         <div>
           {/* Add map method in div, otherwise 'key' error will display */}
-          {this.props.toDos.map((todo) => (
-            <ToDoItems 
-              className = "toDoItem"
-              markComplete = {this.props.markCompleted}
-              onItemDeleteClick = {this.props.onItemDeleteClick}
-              key = {todo.id}
-              todo = {todo}
-            />
+          {this.props.toDos
+            .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+            .map(todo => (
+              <ToDoItems 
+                className = "toDoItem"
+                markComplete = {this.props.markCompleted}
+                onItemDeleteClick = {this.props.onItemDeleteClick}
+                key = {todo.id}
+                todo = {todo}
+              />
           ))}
         </div>
     );
