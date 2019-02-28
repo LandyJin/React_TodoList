@@ -2,7 +2,7 @@
 "toDos": [
     {
       "id": "${__UUID}",
-      "title": "'ake out trash",
+      "title": "Take out trash",
       "completed": false
     },
     {
