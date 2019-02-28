@@ -1,5 +1,5 @@
 {
-"toDos": [
+  "toDos": [
     {
       "id": "1",
       "title": "take out trash",
@@ -14,6 +14,11 @@
       "id": "3",
       "title": "Practice with React",
       "completed": false
+    },
+    {
+      "id": 4,
+      "title": "aaa out trash",
+      "completed": false
     }
-]
+  ]
 }

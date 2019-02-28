@@ -36,3 +36,23 @@ Feature: Generate a fake API
 [Json Placeholder](https://my-json-server.typicode.com/)
 
 [My App API](https://my-json-server.typicode.com/LandyJin/React_TodoList/toDos)
+
+## Json Server
+
+Feature: Generate a fake API
+
+[Json Server](https://github.com/typicode/json-server)
+
+In package JSON 'script'
+```bash
+"json:server": "json-server --watch db.json"
+```
+```bash
+yarn run json:server
+```
+
+## Axois
+
+Feature: Promise based HTTP client for the browser and node.js
+
+[Axois](https://github.com/axios/axios)
