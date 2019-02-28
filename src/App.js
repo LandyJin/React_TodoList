@@ -44,6 +44,7 @@ class App extends Component {
       })
     })
   }
+  
 
   // Add Todo Item
   addToDo = (title) => {

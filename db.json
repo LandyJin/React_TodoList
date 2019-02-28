@@ -1,17 +1,17 @@
 {
 "toDos": [
     {
-      "id": "${__UUID}",
-      "title": "Take out trash",
+      "id": "{{uuid.v4()}}",
+      "title": "'ake out trash",
       "completed": false
     },
     {
-      "id": "${__UUID}",
+      "id": "{{uuid.v4()}}",
       "title": "Hello World",
       "completed": false
     },
     {
-      "id": "${__UUID}",
+      "id": "{{uuid.v4()}}",
       "title": "Practice with React",
       "completed": false
     }
