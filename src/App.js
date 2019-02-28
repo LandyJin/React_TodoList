@@ -22,28 +22,40 @@ class App extends Component {
     });
   }
 
-  // addToDoAxois() {
-  //   axios.post('http://localhost:3000/toDos/posts', this.state.newToDos).then((response) => {
-  //     let { toDos } = this.state;
-
-  //     toDos.push(response.data);
-
-  //     this.setState({ toDos, newToDosModal: false, newToDos: {
-  //       title: '',
-  //     }});
-  //   });
-  // }
-
   // Toggle Complete checkbox
   markCompleted = (id) => {
     console.log(id)
-    this.setState({
-      toDos: this.state.toDos.map(todo => {
-        if (todo.id === id) {
-          todo.completed = !todo.completed
-        }
-        return todo;
+    // this.setState({
+    //   toDos: this.state.toDos.map(todo => {
+    //     if (todo.id === id) {
+    //       todo.completed = !todo.completed
+    //     }
+    //     return todo;
+    //   })
+    // })
+
+    //find Index of ID
+    const index = this.state.toDos.findIndex(p => p.id === id)
+    console.log(index);
+    console.log(this.state.toDos[index].completed);
+    
+    const markComplete = {
+      "id" : id,
+      "title" : this.state.toDos[index].title,
+      "completed" : !this.state.toDos[index].completed
+    }
+    axios.put('http://localhost:3000/toDos/' + id, markComplete).then((response) => {
+      console.log(response)
+      this.setState({
+        toDos: this.state.toDos.map(todo => {
+          if (todo.id === id) {
+            todo.completed = !todo.completed
+          }
+          return todo;
+        })
       })
+
+      //this.componentDidMount();
     })
   }
 
@@ -89,7 +101,7 @@ class App extends Component {
       <div>
         {isLoaded ?
           <div className="App">
-          {console.log(this.props.title)}
+          {console.log(this.state.toDos[0].id)}
             <AddTodoItem
               addToDo = {this.addToDo}
             />

@@ -92,7 +92,7 @@ export class ToDoItems extends Component {
               </form>
               : 
               <span className="checkbox">
-                <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
+                <input type="checkbox" checked={this.props.todo.completed} onChange={this.props.markComplete.bind(this, id)}/>
                 {this.state.onSubmit ? 
                   <span>{ this.state.title }</span> : 
                   <div className='itemDetail'>

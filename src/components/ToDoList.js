@@ -14,7 +14,7 @@ class ToDoList extends Component {
         <div>
           {/* Add map method in div, otherwise 'key' error will display */}
           {this.props.toDos
-            .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+            // .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
             .map(todo => (
                 <ToDoItems 
                   className = "toDoItem"
