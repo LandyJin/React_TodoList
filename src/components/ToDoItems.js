@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 // CSS
 import '../css/ToDoList.css';
@@ -22,11 +23,38 @@ export class ToDoItems extends Component {
     console.log(e)
     e.preventDefault();
     
-    this.setState ({
+    // this.setState ({
+    //     title: this.state.title,
+    //     isEdited : false,
+    //     onSubmit: true
+    // })
+    const id = this.props.todo.id;
+    const title = this.state.title;
+    const completed = this.props.todo.completed;
+    console.log(completed)
+    const Edit = {
+      "id" : id,
+      "title" : title,
+      "completed" : completed
+    }
+    axios.put('http://localhost:3000/toDos/' + id, Edit).then((response) => {
+      console.log(response)
+      this.setState ({
         title: this.state.title,
         isEdited : false,
         onSubmit: true
+      })
+      this.componentDidMount();
     })
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3000/toDos').then((response) => {
+      this.setState({
+        toDos: response.data,
+        isLoaded: true
+      })
+    });
   }
 
   onItemEditClick = () => {

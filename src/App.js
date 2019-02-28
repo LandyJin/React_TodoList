@@ -54,8 +54,7 @@ class App extends Component {
           return todo;
         })
       })
-
-      //this.componentDidMount();
+      this.componentDidMount();
     })
   }
 

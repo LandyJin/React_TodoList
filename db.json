@@ -8,17 +8,17 @@
     {
       "id": "2",
       "title": "Hello World",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
       "title": "Practice with React",
-      "completed": false
+      "completed": true
     },
     {
       "id": "4",
-      "title": "aaa out trash",
-      "completed": false
+      "title": "sdfdczxc",
+      "completed": true
     }
   ]
 }
