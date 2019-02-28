@@ -1,17 +1,17 @@
 {
 "toDos": [
     {
-      "id": "https://www.uuidgenerator.net/api/version4",
+      "id": "${__UUID}",
       "title": "'ake out trash",
       "completed": false
     },
     {
-      "id": "https://www.uuidgenerator.net/api/version4",
+      "id": "${__UUID}",
       "title": "Hello World",
       "completed": false
     },
     {
-      "id": "https://www.uuidgenerator.net/api/version4",
+      "id": "${__UUID}",
       "title": "Practice with React",
       "completed": false
     }
