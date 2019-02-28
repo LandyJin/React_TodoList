@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ToDoItems from './ToDoItems';
+
 import PropTypes from 'prop-types';
 
 // CSS
@@ -15,13 +16,13 @@ class ToDoList extends Component {
           {this.props.toDos
             .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
             .map(todo => (
-              <ToDoItems 
-                className = "toDoItem"
-                markComplete = {this.props.markCompleted}
-                onItemDeleteClick = {this.props.onItemDeleteClick}
-                key = {todo.id}
-                todo = {todo}
-              />
+                <ToDoItems 
+                  className = "toDoItem"
+                  markComplete = {this.props.markCompleted}
+                  onItemDeleteClick = {this.props.onItemDeleteClick}
+                  key = {todo.id}
+                  todo = {todo}
+                />
           ))}
         </div>
     );

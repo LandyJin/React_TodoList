@@ -23,3 +23,26 @@
     color: #ffff;
     font-weight: bold;
 }
+
+.checkbox {
+    display: flex;
+    display: -webkit-flex;
+}
+
+.checkbox input {
+    flex: 0.2;
+}
+
+.itemDetail {
+    display: flex;
+    flex: 3;
+}
+
+.itemDetail span {
+    flex: 1
+}
+
+
+.buttons {
+    flex: 2;
+}

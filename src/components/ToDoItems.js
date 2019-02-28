@@ -8,7 +8,8 @@ export class ToDoItems extends Component {
   state = {
     isEdited : false,
     onSubmit : false,
-    title: ''
+    title: '',
+    // isStared : false
   }
 
   onChange = (e) => {
@@ -33,6 +34,11 @@ export class ToDoItems extends Component {
       isEdited : true,
     })
   }
+
+  // onload = () => {
+  //   let onClickstars = document.getElementsByClassName('getElementsByClassName').getElementsByTagName('span');
+  //   console.log(onClickstars)
+  // }
 
   getStyle = () => {
     // if(this.props.todo.completed) {
@@ -60,6 +66,7 @@ export class ToDoItems extends Component {
     const {
       id, 
       title, 
+      // stars
     } = this.props.todo;
 
     return (
@@ -84,14 +91,24 @@ export class ToDoItems extends Component {
                 <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
               </form>
               : 
-              <span>
-
+              <span className="checkbox">
                 <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
                 {this.state.onSubmit ? 
                   <span>{ this.state.title }</span> : 
-                  <span>{ title }</span>}
-                <button onClick={this.onItemEditClick}>Edit</button>
-                <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
+                  <div className='itemDetail'>
+                    <span>{ title }</span>
+                    {/* <div className="onClickstars">
+                      <span>☆</span>
+                      <span>☆</span> 
+                      <span>☆</span> 
+                      <span>☆</span> 
+                      <span>☆</span>
+                    </div> */}
+                  </div>}
+                <div className='buttons'>
+                  <button onClick={this.onItemEditClick}>Edit</button>
+                  <button onClick={this.props.onItemDeleteClick.bind(this, id)}>Delete</button>
+                </div>
               </span>
               }
             
